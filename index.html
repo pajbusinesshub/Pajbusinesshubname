@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAJ Business Hub | Educating Entrepreneurs for Success</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & basics */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #f9faff;
+      color: #002f6c;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #005bbb;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #002f6c;
+      padding: 1rem 3rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white;
+      letter-spacing: 1.1px;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #69a1ff;
+    }
+    nav .contact-info {
+      color: white;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    nav .contact-info a {
+      color: white;
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 3rem;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    .hero .btn-group {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .btn {
+      background-color: #005bbb;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #003c99;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-outline:hover {
+      background-color: white;
+      color: #005bbb;
+      border-color: #005bbb;
+    }
+
+    /* Section Wrapper */
+    section {
+      padding: 5rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* About Preview */
+    .about-preview {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .about-preview img {
+      flex: 1 1 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      max-width: 100%;
+      height: auto;
+    }
+    .about-preview .content {
+      flex: 1 1 400px;
+      color: #002f6c;
+    }
+    .about-preview .content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .about-preview .content p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      color: #004080;
+    }
+    .about-preview .content a.btn {
+      font-weight: 700;
+      padding: 0.75rem 2.5rem;
+      border-radius: 40px;
+      background-color: #005bbb;
+    }
+
+    /* Services */
+    .services {
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      color: #002f6c;
+    }
+    .service-cards {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      flex: 1 1 280px;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      font-weight: 700;
+      color: #003366;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #00508c;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: #005bbb;
+      color: white;
+      padding: 4rem 3rem;
+      border-radius: 15px;
+      margin-top: 4rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    }
+    .testimonials h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .testimonial {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      margin-top: 0.5rem;
+      text-align: right;
+    }
+
+    /* Footer */
+    footer {
+      background: #002f6c;
+      color: white;
+      padding: 2rem 3rem;
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+    footer .footer-left,
+    footer .footer-right {
+      flex: 1 1 300px;
+      margin-bottom: 1rem;
+    }
+    footer a {
+      color: #69a1ff;
+    }
+    footer .social-links a {
+      margin-right: 1rem;
+      color: white;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+    footer .social-links a:hover {
+      color: #69a1ff;
+    }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .about-preview {
+        flex-direction: column;
+      }
+      .service-cards {
+        flex-direction: column;
+      }
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">PAJ Business Hub</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="contact-info">
+      <a href="mailto:officialpajbusinesshub@gmail.com">officialpajbusinesshub@gmail.com</a>
+      <a href="tel:09123885451">09123885451</a>
+      <a href="https://wa.me/08131058412" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Educating Entrepreneurs for Success</h1>
+    <p>Unlock your potential with expert business education designed for Nigerian entrepreneurs and beyond.</p>
+    <div class="btn-group">
+      <a href="about.html" class="btn">Learn More</a>
+      <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </section>
+
+  <section class="about-preview">
+    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Business Education" />
+    <div class="content">
+      <h2>About PAJ Business Hub</h2>
+      <p>At PAJ Business
